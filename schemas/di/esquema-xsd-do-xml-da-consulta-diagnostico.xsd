@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="listaDiagnostico">
+    <xs:sequence>
+      <xs:element name="listaDiagnostico" type="diagnostico" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="diagnostico">
+    <xs:sequence>
+      <xs:element name="dtGeracao" type="xs:dateTime" minOccurs="0" />
+      <xs:element name="dtRegistro" type="xs:dateTime" minOccurs="0" />
+      <xs:element name="erros" type="mensagemErroDiagnostico"nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="motivoTransmissao" type="xs:string"minOccurs="0" />
+      <xs:element name="nrIdentificacao" type="xs:string" minOccurs="0" />
+      <xs:element name="nrTransmissao" type="xs:string" minOccurs="0" />
+      <xs:element name="numeroDI" type="xs:string" minOccurs="0" />
+      <xs:element name="protocolo" type="xs:string" minOccurs="0" />
+      <xs:element name="retificacao" type="xs:string" minOccurs="0" />
+      <xs:element name="status" type="xs:string" minOccurs="0" />
+      <xs:element name="textoStatus" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>- <xs:complexType name="mensagemErroDiagnostico">
+  <xs:sequence>
+    <xs:element name="adicao" type="xs:string" minOccurs="0" />
+    <xs:element name="diagnostico" type="diagnostico" minOccurs="0" />
+    <xs:element name="mensagem" type="xs:string" minOccurs="0" />
+    <xs:element name="status" type="xs:string" minOccurs="0" />
+  </xs:sequence>
+</xs:complexType>
+</xs:schema>
